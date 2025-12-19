@@ -1,0 +1,124 @@
+/* AI Sales Assistant ERP - Styles */
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.header {
+  background-color: #714B67;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  position: relative;
+}
+
+.salesRepBadge {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background-color: rgba(255,255,255,0.2);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.settingsPanel {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+}
+
+.quickActions {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background-color: #e9ecef;
+  overflow-x: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+.quickBtn {
+  padding: 8px 15px;
+  background-color: white;
+  border: 1px solid #714B67;
+  color: #714B67;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.quickBtn:hover {
+  background-color: #714B67;
+  color: white;
+}
+
+.chatBox {
+  height: 400px;
+  overflow-y: auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.userBubble {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 15px 15px 0 15px;
+  max-width: 80%;
+}
+
+.botBubble {
+  background-color: #e9ecef;
+  color: black;
+  padding: 10px 15px;
+  border-radius: 15px 15px 15px 0;
+  max-width: 80%;
+}
+
+.inputArea {
+  display: flex;
+  padding: 15px;
+  border-top: 1px solid #eee;
+  background-color: white;
+}
+
+.input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  margin-right: 10px;
+  outline: none;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #714B67;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #5a3b52;
+}
+
+.button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
