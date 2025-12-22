@@ -1,13 +1,15 @@
 /* AI Sales Assistant ERP - Styles */
 
 .container {
+  width: 100%;
   max-width: 800px;
-  margin: 20px auto;
+  margin: 0;
   font-family: Arial, sans-serif;
   border: 1px solid #ccc;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background-color: white;
 }
 
 .header {

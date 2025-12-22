@@ -5,7 +5,7 @@ import './App.css'
 function App() {
   // Danh sách tin nhắn ban đầu
   const [messages, setMessages] = useState([
-    { role: 'bot', content: '👋 Xin chào! Em là AI Sales Assistant cho hệ thống ERP.\n\n📋 Em có thể giúp anh/chị:\n✅ Phân tích yêu cầu & gợi ý sản phẩm\n✅ Gợi ý giá bán theo pricelist\n✅ Tạo đơn hàng nhanh\n✅ Tra cứu đơn hàng\n\nAnh/chị cần hỗ trợ gì ạ?' }
+    { role: 'bot', content: '👋 Xin chào! Em là AI Sales Assistant cho hệ thống ERP.\n\n📋 Em có thể giúp anh/chị:\n✅ Tra cứu sản phẩm\n✅ Gợi ý giá bán theo pricelist\n✅ Tạo đơn hàng nhanh\n✅ Tra cứu đơn hàng\n\nAnh/chị cần hỗ trợ gì ạ?' }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -33,7 +33,7 @@ function App() {
       const response = await axios.post('http://127.0.0.1:8000/chat', {
         message: input,
         history: messages,
-        sales_rep_name: salesRepName  // Gửi kèm tên nhân viên
+        sales_rep_name: salesRepName  
       });
 
       // 3. Nhận phản hồi từ Bot
@@ -80,9 +80,6 @@ function App() {
         <button className="quickBtn" onClick={() => quickAction("Liệt kê sản phẩm")}>
           📱 Sản phẩm
         </button>
-        <button className="quickBtn" onClick={() => quickAction("Tôi cần điện thoại chụp ảnh đẹp, giá dưới 20 triệu")}>
-          🔍 Tìm sản phẩm
-        </button>
         <button className="quickBtn" onClick={() => quickAction("Gợi ý giá iPhone 15 cho khách Nguyễn Văn A")}>
           💰 Gợi ý giá
         </button>
@@ -100,7 +97,6 @@ function App() {
               marginBottom: '15px' 
             }}>
             <div className={msg.role === 'user' ? 'userBubble' : 'botBubble'}>
-              {/* Xử lý xuống dòng cho đẹp */}
               {msg.content.split('\n').map((line, i) => (
                 <div key={i}>{line}</div>
               ))}
