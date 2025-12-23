@@ -5,7 +5,7 @@ import './App.css'
 function App() {
   // Danh sách tin nhắn ban đầu
   const [messages, setMessages] = useState([
-    { role: 'bot', content: '👋 Xin chào! Em là AI Sales Assistant cho hệ thống ERP.\n\n📋 Em có thể giúp anh/chị:\n✅ Tra cứu sản phẩm\n✅ Gợi ý giá bán theo pricelist\n✅ Tạo đơn hàng nhanh\n✅ Tra cứu đơn hàng\n\nAnh/chị cần hỗ trợ gì ạ?' }
+    { role: 'bot', content: '👋 Xin chào! Em là AI Sales Assistant cho hệ thống ERP.\n\nAnh/chị cần hỗ trợ gì ạ?' }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -19,6 +19,7 @@ function App() {
   };
   useEffect(() => { scrollToBottom() }, [messages]);
 
+  // Gửi tin nhắn
   const sendMessage = async () => {
     if (!input.trim()) return;
 
@@ -30,9 +31,10 @@ function App() {
 
     try {
       // 2. Gửi sang Python Backend (Cổng 8000) với thông tin sales rep
+      const historyPayload = messages.slice(-10);
       const response = await axios.post('http://127.0.0.1:8000/chat', {
         message: input,
-        history: messages,
+        history: historyPayload,
         sales_rep_name: salesRepName  
       });
 
